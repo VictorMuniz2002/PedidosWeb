@@ -1,0 +1,107 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@modoOscuro" Theme="_currentTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+
+    @* Barra lateral *@
+    <MudAppBar Elevation="4" >
+
+        <MudIconButton 
+            id="m"
+            Style="@($"color:{Colors.Blue.Lighten5};")"
+            Icon="@Icons.Material.Filled.Menu"  Edge="Edge.Start"  OnClick="@((e) => DrawerToggle())"/>
+            <MudText >App</MudText>
+
+        @* MODO OSCURO *@
+        <div class="d-flex justify-content-end flex-wrap flex-grow-1 gap-4">
+        <MudToggleIconButton 
+            Class="pa-4 mr-5"
+            Style="@($"color:{Colors.Grey.Lighten5}; background:{Colors.Grey.Darken3};")"
+            @bind-Toggled="@modoOscuro"
+            Icon="@Icons.Material.Filled.WbSunny"  Title="Off"
+            ToggledIcon="@Icons.Material.Filled.Bedtime"
+            ToggledColor="@Color.Default" ToggledTitle="On" />
+
+        </div>
+  
+        @if(modoOscuro == true){
+          
+        }
+
+    </MudAppBar>
+    <MudDrawer @bind-Open="@_drawerOpen" Elevation="1" >
+        <NavMenu />
+    </MudDrawer>
+
+    <MudMainContent>
+        <MudContainer>
+        @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code{
+   
+  
+
+}
+
+@code{
+    private bool modoOscuro = false;
+    bool _drawerOpen = true;
+    private bool _isDarkMode;
+    private MudThemeProvider? _mudThemeProvider;
+
+    private readonly MudTheme _currentTheme = new()
+        {
+            Palette = new PaletteLight
+            {
+                Primary = "#3077AD",
+                Secondary = "#4CAF50",
+                Info = "#64a7e2",
+                Success = "#2ECC40",
+                Warning = "#FFC107",
+                Error = "#FF0000",
+                AppbarBackground = "#1953AA",
+                TextPrimary = "#000000",
+                TextSecondary = "#4CAF50",
+                
+                
+
+                // more color properties
+            },
+            PaletteDark = new PaletteDark
+            {
+                
+                Primary = "#6585e0",
+                Secondary = "#607D8B",
+                Info = "#a4c2dd",
+                Success = "#2ECC40",
+                Warning = "#dc2d7e",
+                Error = "#de2000",
+                AppbarBackground = "#393939",
+                TextPrimary = "#E0E0E0",
+                TextSecondary = "#BDBDBD",
+                // more color properties
+            }
+        };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
+            StateHasChanged();
+        }
+    }
+
+    // Abrir menu
+    void DrawerToggle() => _drawerOpen = !_drawerOpen;
+
+    // Cambiar tema
+    void ThemeToggle() => _isDarkMode = !_isDarkMode;
+
+}

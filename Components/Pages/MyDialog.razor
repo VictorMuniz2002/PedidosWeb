@@ -1,0 +1,99 @@
+﻿@using System.Net.Mail
+@inject IJSRuntime JSRuntime
+
+<MudDialog>   
+    
+
+<DialogContent>
+        <MudDataGrid T="Pedidos.OrderLine" Items="@orderDetails.orderLines" SortMode="SortMode.Multiple" Filterable="true"
+                     Hideable="true">
+            <Columns>
+                <PropertyColumn Property="x => x.desc_art" Title="Articulo"></PropertyColumn>
+                <PropertyColumn Property="x => x.quantity" Format="0.000" Title="Cantidad"></PropertyColumn>
+
+            </Columns>
+        </MudDataGrid>
+       
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <InputFile id="file1"  OnChange="HandleFileChange"></InputFile>
+        <MudButton Color="Color.Primary" OnClick="SendMail">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    public ElementReference file1;
+    [Parameter] public Pedidos.Order orderDetails { get; set; }
+
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+    void Cancel() => MudDialog.Cancel();
+
+
+
+
+    private IBrowserFile? selectedFile;
+
+    const int MAX_SIZE = 500000 * 1024;
+
+
+
+    async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        selectedFile = e.GetMultipleFiles().FirstOrDefault();
+    }
+
+
+   // ENVIAR EMAIL
+    public async Task SendMail()
+    {
+        try
+        {
+            using (MailMessage mail = new MailMessage())
+            {
+                mail.From = new MailAddress("PEPE@eryod.com");
+                mail.To.Add("victor.muniz@grupojjchicolino.com");
+                mail.Subject = "Mail enviado";
+                mail.Body = "<h2>Cuerpo del email</h2>";
+                mail.IsBodyHtml = true;
+
+               if (selectedFile != null)
+                {
+                    // Obtener el nombre del archivo
+                    string fileName = selectedFile.Name;
+
+                    // Leer el contenido del archivo
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await selectedFile.OpenReadStream(MAX_SIZE).CopyToAsync(memoryStream);
+                        var fileB = memoryStream.ToArray();
+
+                        // Adjuntar el archivo al correo electrónico
+                        Attachment att = new Attachment(new MemoryStream(fileB), fileName);
+                        mail.Attachments.Add(att);
+                    }
+                }
+
+
+                using (SmtpClient smtp = new SmtpClient("smtp.mundo-r.com", 25))
+                {
+                    smtp.Send(mail);
+                    await JSRuntime.InvokeVoidAsync("alert", "Email enviado");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", ex.Message);
+        }
+        finally
+        {
+            MudDialog.Close(DialogResult.Ok(true));
+        }
+    }
+ 
+}
+
+

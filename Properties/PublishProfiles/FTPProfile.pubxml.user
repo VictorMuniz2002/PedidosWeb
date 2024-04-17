@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAz43T9/5I2kuPgwyI/ncPJAAAAAACAAAAAAADZgAAwAAAABAAAAAXUhyi7Mgkcyz+id2ceJGnAAAAAASAAACgAAAAEAAAAH3lrNYmKYQsvUIDU/WtGxMYAAAA9ZjDHDTeZsb++8ELeoXTC7+9HQDsWXdgFAAAAKcKm9JlLrOCvy4oyLGN30xiTSUP</EncryptedPassword>
+    <_PublishTargetUrl>ftp://192.168.1.225/SmallApps\</_PublishTargetUrl>
+    <History>True|2024-04-16T11:14:10.9402659Z;False|2024-04-16T13:02:15.9824289+02:00;False|2024-04-16T13:00:54.6601581+02:00;False|2024-04-16T12:02:09.5632698+02:00;False|2024-04-16T12:01:13.8836466+02:00;False|2024-04-16T12:00:32.2815326+02:00;False|2024-04-16T11:59:59.9878309+02:00;True|2024-04-16T11:10:20.3713419+02:00;True|2024-04-15T18:09:28.1861232+02:00;False|2024-04-15T18:07:39.9117976+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>04/10/2024 17:37:40</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>04/10/2024 17:37:40</publishTime>
+    </File>
+    <File Include="BlazorApp2.deps.json">
+      <publishTime>04/16/2024 13:13:59</publishTime>
+    </File>
+    <File Include="BlazorApp2.dll">
+      <publishTime>04/16/2024 13:13:59</publishTime>
+    </File>
+    <File Include="BlazorApp2.exe">
+      <publishTime>04/16/2024 13:13:59</publishTime>
+    </File>
+    <File Include="BlazorApp2.pdb">
+      <publishTime>04/16/2024 13:13:59</publishTime>
+    </File>
+    <File Include="BlazorApp2.runtimeconfig.json">
+      <publishTime>04/15/2024 18:07:27</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Authorization.dll">
+      <publishTime>02/16/2024 23:23:08</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Components.dll">
+      <publishTime>02/16/2024 23:22:46</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Components.Forms.dll">
+      <publishTime>02/16/2024 23:22:48</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Components.Web.dll">
+      <publishTime>02/16/2024 23:23:32</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Metadata.dll">
+      <publishTime>02/16/2024 23:23:08</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <publishTime>02/15/2024 00:51:40</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.Localization.Abstractions.dll">
+      <publishTime>02/16/2024 23:23:56</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.Localization.dll">
+      <publishTime>02/16/2024 23:25:08</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.Logging.Abstractions.dll">
+      <publishTime>02/15/2024 00:51:52</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.Options.dll">
+      <publishTime>01/18/2024 04:05:26</publishTime>
+    </File>
+    <File Include="Microsoft.JSInterop.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="MudBlazor.dll">
+      <publishTime>03/22/2024 12:21:56</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>10/27/2023 01:34:06</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/sni.dll">
+      <publishTime>07/12/2017 13:24:24</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/sni.dll">
+      <publishTime>07/12/2017 13:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/sni.dll">
+      <publishTime>07/12/2017 13:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>10/27/2023 01:34:10</publishTime>
+    </File>
+    <File Include="System.Data.SqlClient.dll">
+      <publishTime>10/27/2023 01:27:26</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="wwwroot/app.css">
+      <publishTime>04/10/2024 17:37:40</publishTime>
+    </File>
+    <File Include="wwwroot/BlazorApp2.styles.css">
+      <publishTime>04/16/2024 13:00:43</publishTime>
+    </File>
+    <File Include="wwwroot/bootstrap/bootstrap.min.css">
+      <publishTime>04/16/2024 12:16:37</publishTime>
+    </File>
+    <File Include="wwwroot/bootstrap/bootstrap.min.css.map">
+      <publishTime>04/10/2024 17:37:41</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.png">
+      <publishTime>04/10/2024 17:37:40</publishTime>
+    </File>
+    <File Include="wwwroot/img/Captura.PNG">
+      <publishTime>04/15/2024 11:32:24</publishTime>
+    </File>
+    <File Include="wwwroot/_content/MudBlazor/MudBlazor.min.css">
+      <publishTime>03/22/2024 12:21:04</publishTime>
+    </File>
+    <File Include="wwwroot/_content/MudBlazor/MudBlazor.min.js">
+      <publishTime>03/22/2024 12:21:04</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
